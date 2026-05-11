@@ -1,16 +1,6 @@
-<!-- templates/galeria/base.html -->
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <title>Space Gallery</title>
-    <!-- CSS, fonts etc. -->
-     <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+{% extends 'galeria/base.html' %}{% load static %}
 
-</head>
-<body>
-    {% block content %}{% endblock %}
-    <!-- No base.html, inclua as partials assim: -->
-{% include 'galeria/partials/_menu.html' %}
-{% include 'galeria/partials/_footer.html' %}
-</body>
-</html>
+{% block content %}
+<section class="conteudo">
+    </section>
+{% endblock %}

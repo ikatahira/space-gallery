@@ -1,18 +1,17 @@
-<!-- Sempre na PRIMEIRA linha do arquivo HTML -->
-{% load static %}
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-
 <!-- templates/galeria/index.html -->
-{% extends 'galeria/base.html' %}
-{% load static %}
-
-{% block content %}
-  <main>
-    <h1>Galeria de Imagens</h1>
-    <!-- conteúdo específico desta página -->
-     <img src="{% static 'assets/logo/logo.png' %}" alt="Logo">
-
-  </main>
-{% endblock %}
+{% if cards %}
+  {% for fotografia in cards %}
+    <li class="card">
+      <a href="{% url 'imagem' fotografia.id %}">
+        <img 
+          src="{% static 'assets/imagens/galeria/' %}{{fotografia.foto}}" 
+          alt="{{fotografia.nome}}"
+        >
+      </a>
+      <p class="card__titulo">{{fotografia.nome}}</p>
+      <p class="card__descricao">{{fotografia.legenda}}</p>
+    </li>
+  {% endfor %}
+{% else %}
+  <p>Nenhuma fotografia encontrada.</p>
+{% endif %}
