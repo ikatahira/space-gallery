@@ -1,5 +1,19 @@
-<!-- Sempre na PRIMEIRA linha do arquivo HTML -->
+{% extends 'galeria/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="pt-BR">
+{% block content %}
+<main class="principal">
+    <section class="conteudo">
+        <section class="imagem">
+            <div class="imagem__conteudo">
+                <img class="imagem__imagem" src="{% static 'assets/imagens/galeria/' %}{{ fotografia.foto }}" alt="{{ fotografia.nome }}">
+                <div class="imagem__info">
+                    <h1 class="imagem__titulo">{{ fotografia.nome }}</h1>
+                    <p class="imagem__legenda">{{ fotografia.legenda }}</p>
+                    <p class="imagem__descricao">{{ fotografia.descricao }}</p>
+                </div>
+            </div>
+        </section>
+    </section>
+</main>
+{% endblock %}
