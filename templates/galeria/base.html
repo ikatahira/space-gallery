@@ -1,0 +1,14 @@
+<!-- templates/galeria/base.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Space Gallery</title>
+    <!-- CSS, fonts etc. -->
+</head>
+<body>
+    {% block content %}{% endblock %}
+    <!-- No base.html, inclua as partials assim: -->
+{% include 'galeria/partials/_menu.html' %}
+{% include 'galeria/partials/_footer.html' %}
+</body>
+</html>
